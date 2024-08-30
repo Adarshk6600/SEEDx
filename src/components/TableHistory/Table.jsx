@@ -20,6 +20,7 @@ const Table = (tableProps) => {
             <td className='tableImage'> <img src={tableProps.image} alt="" /> {tableProps.data || '-'}</td>
             <td className='mid'>{tableProps.data2 || '-'}</td>
             <td className='right'>{tableProps.data3 || '-'}</td>
+
           </tr>
         </thead>
       </table>

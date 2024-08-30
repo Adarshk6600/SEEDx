@@ -2,6 +2,7 @@ import './TradingHeader.css'
 import svg from '../../assets/seedx.svg'
 import PopUp from '../PopUp/PopUp';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 const TradingHeader = () => {
@@ -11,6 +12,8 @@ const TradingHeader = () => {
   const handlepopUp = () => {
     setPopup(prev => !prev)
   }
+
+  const { activeCoin } = useSelector((state) => state.coins)
 
 
   const tradingData = [
@@ -27,11 +30,11 @@ const TradingHeader = () => {
         <PopUp setpopup={handlepopUp} />
       </div>
       <div className='trading_logo' onClick={handlepopUp} >
-        <img src={svg} alt="" /> <span><h2>SEEDx/INRx</h2><p>Click to view</p></span>
+        <img src={activeCoin?.image || svg} alt="" /> <span><h2>{activeCoin?.symbol || 'SEEDx/INR'}</h2><p>Click to view</p></span>
       </div>
       <div className='trading_data'>
         <span>
-          <p className="data2">2.1</p>
+          <p className="data2">{activeCoin?.current_price || 0}</p>
           <p className='data2'>2.1</p>
         </span>
         {tradingData.map((item, index) => (

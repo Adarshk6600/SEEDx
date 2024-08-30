@@ -1,14 +1,21 @@
-// src/app/Store/reducers/selectedCoinReducer.js
 import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  image: '',
+  data: '',
+  data2: '',
+  data3: ''
+};
 
 const selectedCoinSlice = createSlice({
   name: 'selectedCoin',
-  initialState: {
-    selectedCoin: null,
-  },
+  initialState,
   reducers: {
     setSelectedCoin: (state, action) => {
-      state.selectedCoin = action.payload;
+      state.image = action.payload.image;
+      state.data = action.payload.data;
+      state.data2 = action.payload.data2;
+      state.data3 = action.payload.data3;
     },
   },
 });

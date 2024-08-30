@@ -4,10 +4,13 @@ import svg from '../../assets/seedx.svg'
 import { FaSortDown } from "react-icons/fa";
 import { useState } from 'react';
 import WalletComp from '../WalletComp/WalletComp';
+import { useSelector } from 'react-redux';
+
 const Header = () => {
 
   const [walletClick, setWalletClick] = useState(true);
   const [inrpopup, setInrpopup] = useState(true)
+
 
   const handleInr = () => {
     setInrpopup(prev => !prev)
@@ -26,7 +29,7 @@ const Header = () => {
         <div className="wallet">
 
           <img src={svg} alt="SEEDx" />
-          <p className="price">₹2.17</p>
+          <p className="price"></p>
           <p>INR <FaSortDown id='buttonInr' onClick={handleInr} size={15} /></p>
           <div className={inrpopup ? 'inrpopup showInr' : 'inrpopup'}>
             <div>
@@ -40,7 +43,7 @@ const Header = () => {
         <button id='walletBtn' onClick={handleWalletClick}>Connect Wallet</button>
       </div>
       <div className={walletClick ? 'walletPopUp walletShowPopup' : 'walletPopUp'}>
-        <WalletComp clickFunction = {handleWalletClick} />
+        <WalletComp clickFunction={handleWalletClick} />
       </div>
     </header>
   )

@@ -1,12 +1,11 @@
 // src/app/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import { coinSlice } from './reducers/coinReducer';
+import coinReducer from './reducers/coinReducer';
+import selectedCoinReducer from './reducers/selectedCoinReducer';
 
 export const store = configureStore({
   reducer: {
-    coins: coinSlice?.reducer,
-    
+    coins: coinReducer,
+    selectCoin: selectedCoinReducer,
   },
 });
-
-
