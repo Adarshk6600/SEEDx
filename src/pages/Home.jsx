@@ -5,6 +5,8 @@ import Cards from '../components/Cards/Cards';
 import Markets from '../components/Markets/Markets';
 import { IoEyeSharp } from "react-icons/io5";
 import Footer from '../components/Footer/Footer';
+import ProfilePage from '../components/profilePage/ProfilePage';
+
 
 
 const Home = () => {
@@ -70,8 +72,9 @@ const Home = () => {
         <p>Start, grow, and manage SEEDx DAO. We're with you each step of the way.</p>
         <button>Participate Now</button>
       </div>
+      
+      <ProfilePage />
       <Footer />
-
     </>
 
   )

@@ -1,0 +1,55 @@
+  .profilePage {
+  background-color: var(--bg-color);
+  height: 100vh;
+  position: fixed;
+  border: 2px solid rgba(128, 128, 128, 0.418);
+  width: 336px;
+  top: 0;
+  right: 0;
+  margin: 3px 3px;
+  border-radius: 10px;
+  z-index: 101;
+}
+
+
+.profilePage .profileHeader img{
+   height: 40px;
+}
+
+.profilePage .profileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+}
+
+.profilePage .profileHeader div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profilePage h1 {
+  padding: 20px;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
+.profilePage .walletcards {
+  display: flex;
+  margin: 20px;
+  gap: 8px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.345);
+}
+
+.profilePage .walletcards div {
+  padding: 20px;
+  flex-grow: 1;
+  border-radius: 10px;
+  background-color: #f183a828;
+  color: #f183a8;
+}
