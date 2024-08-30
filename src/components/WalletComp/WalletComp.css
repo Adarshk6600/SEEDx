@@ -18,10 +18,32 @@
   color: rgb(170, 170, 170);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 5px;
 }
 
-.wallet_comp .wallet_wrapper div {
-   
+.metamask {
+  flex: 1;
+  padding: 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.metamask img {
+  height: 30px;
+}
+
+.wallet_wrapper .wallet_footer {
+  display: flex;
+  justify-content: space-between;
+} 
+
+.wallet_wrapper .wallet_footer h5:last-child {
+  color: rgb(3, 147, 3);
+  cursor: pointer;
+}
+
+.metamask h1 {
+  flex-grow: 1;
+}

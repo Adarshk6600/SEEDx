@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { store } from './app/Store/store'
 
 
+
 function App() {
 
 
@@ -21,7 +22,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='Trading' element={<Trading />} />
           </Routes>
-         </div>
+        </div>
       </Router>
     </Provider>
   )

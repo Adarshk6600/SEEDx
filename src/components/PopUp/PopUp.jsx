@@ -1,4 +1,3 @@
-// src/components/PopUp/PopUp.js
 import React, { useState, useEffect } from 'react';
 import './PopUp.css';
 import { IoSearch } from "react-icons/io5";
