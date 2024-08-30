@@ -1,0 +1,81 @@
+.markets {
+  padding-left: 80px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 80px;
+  
+}
+
+.market_heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: rgb(180, 180, 180);
+  width: 100%;
+  padding: 0px 55px;
+}
+
+.market_heading h1 {
+  font-weight: lighter;
+  color: white;
+}
+
+.list_container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list_container div {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-around;
+    background-color: var(--bg-color);
+    padding: 10px 0px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.list_container div button {
+
+  background-color: transparent;
+  border:none;
+  color: var(--primary-color);
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 12px;
+  border: var(--primary-color) 1.5px solid;
+
+
+}
+
+.list_container div span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.list_container div span p:last-child {
+  color: white;
+}
+
+.list_container div span #price {
+  color: rgb(0, 176, 0);
+}
+
+
+.list_container div:hover {
+  
+  scale: 1.02;
+
+}

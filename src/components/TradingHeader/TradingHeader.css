@@ -1,0 +1,70 @@
+.trading_header {
+  padding-left: 100px;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.trading_logo img {
+  height: 50px;
+}
+
+.trading_logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trading_data {
+  display: flex;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+
+.trading_data span {
+  margin-left: 20px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(184, 184, 184);
+}
+
+.data2 {
+  color: rgb(0, 183, 0);
+  font-size: 14px;
+}
+
+.data3 {
+  color: white;
+  font-size: 14px;
+}
+
+.trading_logo p{
+  font-size: 12px;
+  color: rgb(199, 199, 199);
+  margin-top: 3px;
+}
+
+.cover_popup {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.575);
+  backdrop-filter: blur(10px);
+
+}
+
+.cover_popup_show{
+  display: none;
+}

@@ -1,0 +1,66 @@
+.popup {
+  height: 578px;
+  width: 435px;
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.popup_heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup_heading h2 {
+  margin: 0;
+}
+
+.popup_heading h3 {
+  margin: 0;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  transition: all 0.4s;
+}
+
+.popup_heading h3:hover {
+  color: white;
+}
+
+.popup_input {
+  background-color: #272a2c;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.popup_input .inputpop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.popuplist .listthicon .iconth {
+  position: absolute;
+}
+
+table, thead, tr {
+  width: 100%;
+}
+
+.popup table thead tr{
+  display: flex;
+  width: 100%;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+.popup table thead tr th {
+  display: flex;
+  padding: 5px;
+  font-weight: lighter;
+}

@@ -1,0 +1,19 @@
+div {
+  font-size: 14px;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;  
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 15px;
+  border-radius: 5px;
+}
+

@@ -1,0 +1,75 @@
+.tab_navigation {
+  height: auto;
+  position: relative;
+  width: 57.6%;
+  margin-top: 5px;
+  background-color: rgba(46, 46, 46, 0.395);
+}
+
+
+.refresh {
+  display: flex;
+  align-items: center;
+  justify-content: c;
+}
+
+.refresh div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.tabss {
+  height: fit-content;
+  border-bottom: 1px solid var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+}
+
+
+.tabss div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  padding: 0px 10px;
+  padding-top: 10px;
+  color: gray;
+}
+
+.tab-content {
+  height: 300px;
+  position: relative;
+}
+
+.con {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: none;
+  left: 0;
+  padding: 20px;
+}
+
+
+.tabss div .nav-active {
+   border-bottom: 2px solid var(--primary-color);
+   height: 100%;
+   padding: 10px;
+   color: white;
+   cursor: pointer;
+   
+}
+
+.tabss div .tabs {
+  cursor: pointer;
+}
+
+.showBlock {
+  display: block;
+}

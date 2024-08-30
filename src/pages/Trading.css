@@ -1,0 +1,125 @@
+.chart {
+  overflow: hidden;
+  height: fit-content;
+  width: fit-content;
+  padding-left: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.left_section {
+  width: 37vw;
+  display: flex;
+}
+
+.section1 {
+  width: 50%;
+}
+
+.trading_right_section {
+  overflow: hidden;
+  padding: 0px 20px;
+  display: flex;
+  background-color: var(#1A1B1F);
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  
+}
+
+.trading_right_section div {
+  display: flex;
+  gap: 5px;
+}
+
+.limit {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.limit select {
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: var(--bg-color);
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.limit select option {
+  background-color:var(--bg-color);
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+
+.limit p {
+  font-size: 14px;
+  color: gray;
+}
+
+.balance {
+  font-size: 14px;
+}
+
+.balance p {
+  text-align: left;
+  margin-right: 140px;
+  color: rgb(0, 183, 0);
+}
+
+.input {
+  width: 100%;
+}
+
+#mainButton {
+  padding: 12px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(270deg, #f705d9, #2662b5);
+  border: none;
+  outline: none;
+
+}
+
+.navtabs {
+  padding-left: 70px;
+  width: 100%;
+  display: flex;
+}
+
+
+.next-left {
+  background-color: rgba(46, 46, 46, 0.395);
+  height: 350px;
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 20%;
+}
+
+.navtabs .navdetails {
+  margin: 5px;
+  width: 20%;
+  background-color: rgba(46, 46, 46, 0.395);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navdetails .dets1 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  border-bottom: 2px solid var(--bg-color);
+  color: rgb(186, 184, 184);  
+}

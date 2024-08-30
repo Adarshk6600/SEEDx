@@ -1,0 +1,120 @@
+aside {
+  border-right: 1px solid var(--border-color);
+  position: fixed;
+  height: 100vh;
+width: 70px;
+  z-index: 100;
+  transition: all 0.3s;
+  background-color: black;
+  top: 0;
+}
+
+
+/* Logo section */
+
+.sidebar_logo {
+    display: flex;
+    padding:7.7px 20px;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+
+.sidebar_logo img {
+  height: 35px;
+}
+
+.sidebar_logo h1 {
+  font-weight: lighter;
+  font-size: 1.4rem;
+}
+
+/* logo section ends here */
+
+
+
+/* Side Menu bar */
+
+.sidebar_menu {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.sidebar_menu p:hover {
+  color: var(--primary-color);
+}
+
+.sidebar_menu .heading {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.sidebar_menu .dropdown {
+  background-color: var(--bg-color);
+  display: flex;
+  font-size: 13px;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 70px;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  transition: all 0.4s;
+  transform-origin: left;
+
+}
+
+.navlink {
+  text-decoration: none;
+  color: white;
+}
+
+.navlink:hover{
+  color: var(--primary-color);
+}
+
+.dropdown p {
+  margin-left: 20px;
+}
+
+/* Slider toggle function */
+
+.aside-active {
+  width: 220px;
+  overflow: hidden;
+  
+}
+
+.sidebar_menu .heading {
+   overflow: hidden; 
+}
+
+.show {
+  height: 0;
+  width: 0;
+  transform-origin: center;
+  transform-origin: right;
+  overflow: hidden
+}
+
+.heading span:last-child:hover {
+  color: var(--primary-color);
+}
+
+.span-active {
+  transform: rotateZ(180deg);
+}
+

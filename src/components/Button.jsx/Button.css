@@ -1,0 +1,24 @@
+.left_section_buttons {
+  padding: 8px 50px;
+  font-size: 15px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Define specific background colors */
+.blue-button {
+  background-color: blue;
+}
+
+.green-button {
+  background-color: green;
+}
+
+.red-button {
+  background-color: red;
+}
+
+/* Add other color classes as needed */

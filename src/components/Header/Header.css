@@ -1,0 +1,144 @@
+header {
+  position: fixed;
+  background-color: black;
+  width: 100vw;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 40px;
+  border-bottom: 1px solid var(--border-color);
+  justify-content: space-between;
+  top: 0;
+  z-index: 99;
+  
+}
+
+header .searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: gray;
+  padding: 10px 15px;
+  background-color: var(--bg-color);
+  border-radius: 15px;
+}
+
+header .searchBox input {
+   background-color: transparent;
+   outline: none;
+   border: none;
+   color: white;
+
+}
+
+.wallet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; font-size: 12px;
+  color: rgb(195, 195, 195);
+  padding: 10px;
+  border-right: 1px solid var(--border-color);
+  height: 30px;
+}
+
+.wallet img {
+  height: 20px;
+}
+
+
+.wallet .price{
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+.wallet .price:hover {
+  color: rgb(14, 144, 14);
+}
+
+.wallet span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.wall-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wall-con button {
+  margin-left: 20px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: rgb(66, 60, 227);
+    background: linear-gradient(137deg, rgb(87, 81, 243) 28%, rgba(86, 81, 243, 1) 39%, rgba(116, 112, 236, 1) 58%, rgb(241, 89, 246) 100%);
+    cursor: pointer;
+}
+
+.wall-con button:hover {
+  background: rgb(176, 174, 222);
+    background: linear-gradient(137deg, rgba(176, 174, 222, 1) 0%, rgba(234, 88, 241, 0.7874331861650911) 1%);
+}
+
+.inrpopup {
+  position: absolute;
+  background-color:var(--bg-color);
+  height: auto;
+  width: 150px;
+  border-radius: 10px;
+  bottom: -70PX;
+  padding: 20px 0px;  
+}
+
+.inrpopup div span {
+color: gray;
+padding: 4px 10px;
+cursor:pointer;
+}
+
+.inrpopup div span:last-child {
+  color: rgb(0, 197, 0);
+  font-size: 16px;
+  margin-left: 5px;
+  font-weight: lighter;
+}
+
+.showInr {
+  display: none;
+}
+
+#buttonInr {
+  cursor: pointer;
+}
+
+.inrpopup div:hover {
+  background-color: rgba(75, 75, 75, 0.532);
+}
+
+.walletPopUp {
+  background-color: rgba(0, 0, 0, 0.578);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 200px;
+
+}
+
+.walletShowPopup {
+  display: none;
+}
