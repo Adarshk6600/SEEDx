@@ -1,6 +1,6 @@
 import './WalletComp.css';
 
-const WalletComp = ({ clickFunction, connectWallet, connectWalletClick }) => {
+const WalletComp = ({ clickFunction, connectWallet }) => {
 
   return (
     <div className='wallet_comp' onMouseLeave={clickFunction}>
@@ -10,7 +10,7 @@ const WalletComp = ({ clickFunction, connectWallet, connectWalletClick }) => {
 
         <div className='metamask'>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJZaVpfhv3kgZA46GoqfVNIFhR6pXIdX4_Rg&s" alt="MetaMask Logo" />
-          <h1 onClick={connectWallet} > Connect MetaMask </h1>
+          <h1 id='walletconnectbtn' onClick={connectWallet} > Connect MetaMask </h1>
         </div>
 
         <div className="transaction-list">

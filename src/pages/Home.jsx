@@ -5,6 +5,8 @@ import Cards from '../components/Cards/Cards';
 import Markets from '../components/Markets/Markets';
 import { IoEyeSharp } from "react-icons/io5";
 import Footer from '../components/Footer/Footer';
+import { useSelector } from 'react-redux';
+import SignUpPage from '../pages/SignUp Page/SignUp'
 
 
 const Home = () => {
@@ -51,6 +53,7 @@ const Home = () => {
       name: 'USDT'
     },
   ]
+  const { activeCoin } = useSelector((state) => state.coins)
 
   return (
     <>
@@ -63,13 +66,15 @@ const Home = () => {
       </div>
       <Hero />
       <Cards h1='Gamepad' />
-      <Markets />
+      <Markets activeCoin={activeCoin} />
       <Cards h1='Get more done with SEEDx' heading='Launching a Token should be a celebration, not a nightmare.' icon={<IoEyeSharp size={40} />} p='Launching a Token should be a celebration, not a nightmare.' heading='No surprises or hidden fees' para='We don t charge anything to list on an exchange, do airdrops, or make tokens.' />
       <div className="footerbutton">
         <h1>Get Started with Governance</h1>
         <p>Start, grow, and manage SEEDx DAO. We're with you each step of the way.</p>
         <button>Participate Now</button>
       </div>
+      <SignUpPage />
+
       <Footer />
     </>
 

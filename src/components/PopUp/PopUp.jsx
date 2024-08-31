@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './PopUp.css';
 import { IoSearch } from "react-icons/io5";
 import { FaSortDown, FaSortUp } from "react-icons/fa";
@@ -10,9 +10,11 @@ const PopUp = ({ setpopup }) => {
   const { coins } = useSelector(state => state.coins);
   const dispatch = useDispatch();
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
+      setLoading(true);
       const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false');
 
       if (!response.ok) {
@@ -23,15 +25,18 @@ const PopUp = ({ setpopup }) => {
       dispatch(setCoinsList(result));
     } catch (error) {
       setError(error);
+    } finally {
+      setLoading(false);
     }
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const handleRowClick = (coin) => {
     dispatch(setActiveCoin(coin));
+    setpopup(true)
   };
 
   return (
@@ -47,46 +52,52 @@ const PopUp = ({ setpopup }) => {
         </div>
       </div>
       <div className="popuplist">
-        {error && <div>Error: {error.message}</div>}
-        <table>
-          <thead>
-            <tr>
-              <th>
-                <span><p>Pairs</p></span>
-                <div className='listthicon'>
-                  <FaSortUp className='iconth' />
-                  <FaSortDown className='iconth' />
-                </div>
-              </th>
-              <th>
-                <span><p>Price</p></span>
-                <div className='listthicon'>
-                  <FaSortUp className='iconth' />
-                  <FaSortDown className='iconth' />
-                </div>
-              </th>
-              <th>
-                <span><p>24H Change</p></span>
-                <div className='listthicon'>
-                  <FaSortUp className='iconth' />
-                  <FaSortDown className='iconth' />
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {coins.map((item) => (
-              <tr key={item.id} onClick={() => handleRowClick(item)} style={{ cursor: 'pointer' }}>
-                <Table
-                  className='tdfont'
-                  image={item.image}
-                  data={item.name}
-                  data2={`$${item.current_price.toLocaleString()}`}
-                  data3={`${item.price_change_percentage_24h.toFixed(2)}%`} />
+        {loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>Error: {error.message}</div>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <span><p>Pairs</p></span>
+                  <div className='listthicon'>
+                    <FaSortUp className='iconth' />
+                    <FaSortDown className='iconth' />
+                  </div>
+                </th>
+                <th>
+                  <span><p>Price</p></span>
+                  <div className='listthicon'>
+                    <FaSortUp className='iconth' />
+                    <FaSortDown className='iconth' />
+                  </div>
+                </th>
+                <th>
+                  <span><p>24H Change</p></span>
+                  <div className='listthicon'>
+                    <FaSortUp className='iconth' />
+                    <FaSortDown className='iconth' />
+                  </div>
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {coins.map((item) => (
+                <tr key={item.id} onClick={() => handleRowClick(item)} style={{ cursor: 'pointer' }}>
+                  <Table
+                    onClick={setpopup}
+                    className='tdfont'
+                    image={item.image}
+                    data={item.name}
+                    data2={`$${item.current_price.toLocaleString()}`}
+                    data3={`${item.price_change_percentage_24h.toFixed(2)}%`} />
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

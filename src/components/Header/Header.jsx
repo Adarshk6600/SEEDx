@@ -4,7 +4,6 @@ import svg from '../../assets/seedx.svg'
 import { FaSortDown } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 import WalletComp from '../WalletComp/WalletComp';
-import { useSelector } from 'react-redux';
 import ProfilePage from '../profilePage/ProfilePage'
 import Web3 from 'web3';
 
@@ -41,12 +40,6 @@ const Header = () => {
   };
 
 
-
-  const connectWalletClick = () => {
-
-  }
-
-
   const handleLogOutClick = () => {
     setAccount(null)
   }
@@ -75,7 +68,7 @@ const Header = () => {
         <button style={{ maxWidth: '140px', overflow: 'hidden' }} id='walletBtn' onClick={handleWalletClick}>{account ? account : 'Connect Wallet'}</button>
       </div>
       <div onClick={handleWalletClick} className={walletClick ? 'walletPopUp walletShowPopup' : 'walletPopUp'}>
-        {account ? <ProfilePage account={account} handleLogOutClick={handleLogOutClick} id={account ? 'hideProfile' : 'showProfile'} /> : <WalletComp connectWalletClick={connectWalletClick} connectWallet={connectWallet} />}
+        {account ? <ProfilePage account={account} handleLogOutClick={handleLogOutClick} id={account ? 'hideProfile' : 'showProfile'} /> : <WalletComp connectWallet={connectWallet} />}
       </div>
     </header>
   )

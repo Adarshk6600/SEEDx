@@ -79,3 +79,15 @@
   scale: 1.02;
 
 }
+
+#list_flex {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+}
+
+#listimg {
+  height: 20px;
+  width: 20px;
+}

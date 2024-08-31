@@ -22,12 +22,13 @@
 }
 
 .metamask {
-  flex: 1;
   padding: 5px;
   font-size: 12px;
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 .metamask img {
@@ -46,4 +47,22 @@
 
 .metamask h1 {
   flex-grow: 1;
+}
+
+#walletconnectbtn {
+ font-size: 16px;
+ transition: 0.3s;
+}
+
+#walletconnectbtn:hover {
+  color: white;
+}
+
+.metamask:hover{
+  background-color: rgba(86, 85, 85, 0.507);
+}
+
+.metamask:active {
+  color: black;
+  background-color: white;
 }

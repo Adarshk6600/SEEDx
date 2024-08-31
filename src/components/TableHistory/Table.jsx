@@ -1,6 +1,6 @@
 import './History.css'
 
-const Table = (tableProps) => {
+const Table = (tableProps, { setpopup }) => {
 
 
   const saveCoinData = () => {

@@ -72,11 +72,11 @@
   color: rgb(0, 183, 0);
 }
 
-.input {
+.input-trading {
   width: 100%;
 }
 
-#mainButton {
+#mainButton-trading {
   padding: 12px 15px;
   border-radius: 5px;
   cursor: pointer;
@@ -122,4 +122,26 @@
   font-size: 14px;
   border-bottom: 2px solid var(--bg-color);
   color: rgb(186, 184, 184);  
+}
+
+.left_section_buttons {
+  border: none;
+  /* Default border style */
+  color: white;
+  /* Text color */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.left_section_buttons:focus {
+  outline: none;
+}
+
+.left_section_buttons:not(:disabled) {
+  background-color: transparent;
+  /* Default background for inactive */
+  border: 1px solid gray;
+  /* Border for inactive buttons */
 }
