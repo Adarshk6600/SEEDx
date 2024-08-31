@@ -25,10 +25,15 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.281);
 }
 
+.profilePage .profileHeader div p {
+  margin: 0px 20px;
+}
+
 .profilePage .profileHeader div {
   display: flex;
   align-items: center;
   gap: 10px;
+  overflow: hidden;
 }
 
 .profilePage h1 {

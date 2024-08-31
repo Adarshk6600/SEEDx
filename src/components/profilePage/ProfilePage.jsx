@@ -10,17 +10,17 @@ import { GrGallery } from "react-icons/gr";
 
 import React from 'react'
 
-const ProfilePage = () => {
+const ProfilePage = ({ handleLogOutClick, account }) => {
   return (
     <div className='profilePage'>
       <div className="profileHeader">
         <div>
           <img src='https://seedx.app/image/seedx.svg' alt="SEEDx" />
-          <p>0x10…E74B (0 BNB)
-          </p><FaCopy size={18} />
+          <p>{account}
+          </p><FaCopy size={20} />
 
         </div>
-        <IoIosLogOut size={25} />
+        <IoIosLogOut onClick={handleLogOutClick} size={25} />
       </div>
 
       <h1 className='Walletmoney'>$ 0</h1>

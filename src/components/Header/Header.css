@@ -119,6 +119,7 @@ cursor:pointer;
 
 #buttonInr {
   cursor: pointer;
+  
 }
 
 .inrpopup div:hover {
@@ -140,5 +141,13 @@ cursor:pointer;
 }
 
 .walletShowPopup {
+  display: none;
+}
+
+#showProfile {
+  display: block;
+}
+
+#hideProfile {
   display: none;
 }

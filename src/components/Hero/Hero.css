@@ -16,8 +16,13 @@
   color: white;
   font-size: 14px;
   padding: 10px 15px;
-  background-color: var(--bg-color);
+  background-color: #272a2c;
   border-radius: 5px;
+  transition: 200ms;
+}
+
+.hero_buttons:hover{
+ background-color: var(--bg-color);
 }
 
 .hero_heading {
