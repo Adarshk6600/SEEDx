@@ -32,7 +32,6 @@
 .profilePage .profileHeader div {
   display: flex;
   align-items: center;
-  gap: 10px;
   overflow: hidden;
 }
 
@@ -57,4 +56,10 @@
   border-radius: 10px;
   background-color: #f183a828;
   color: #f183a8;
+}
+
+.overflowProfileAcc {
+  overflow: hidden;
+  width: 100px;
+
 }

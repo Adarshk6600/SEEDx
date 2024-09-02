@@ -13,10 +13,15 @@ import React from 'react'
 const ProfilePage = ({ handleLogOutClick, account }) => {
   return (
     <div className='profilePage'>
+
+      <div className="signUpWindow">
+        
+       </div>
+
       <div className="profileHeader">
         <div>
           <img src='https://seedx.app/image/seedx.svg' alt="SEEDx" />
-          <p>{account}
+          <p className='overflowProfileAcc'>{account}
           </p><FaCopy size={20} />
 
         </div>

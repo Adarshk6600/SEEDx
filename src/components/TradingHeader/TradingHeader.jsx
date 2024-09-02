@@ -35,8 +35,8 @@ const TradingHeader = () => {
       </div>
       <div className='trading_data'>
         <span>
-          <p className="data2">{activeCoin?.current_price ?? 'N/A'}</p>
-          <p className='data2'>{activeCoin?.price_change_percentage_24h?.toFixed(2) ?? 'N/A'}</p>
+          <p className="data2">{activeCoin?.current_price || 'N/A'}</p>
+          <p className='data2'>{activeCoin?.price_change_percentage_24h || 'N/A'}</p>
         </span>
         {tradingData.map((item, index) => (
           <span key={index}>

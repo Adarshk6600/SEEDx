@@ -17,6 +17,8 @@ const Markets = () => {
     fetchData();
   }, []);
 
+
+
   return (
     <div className='markets'>
       <div className="market_heading">
@@ -29,7 +31,7 @@ const Markets = () => {
                 <p>Name</p>
                 <span id='list_flex'>
                   <img id='listimg' src={coin.image} alt={coin.name} width={50} height={50} />
-                  <p>{coin.name} ({coin.symbol.toUpperCase()})</p>
+                  <p>{coin.name.slice(0, 3)} ({coin.symbol.toUpperCase()})</p>
                 </span>
               </span>
 

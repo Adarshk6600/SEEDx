@@ -8,6 +8,7 @@ import ProfilePage from '../profilePage/ProfilePage'
 import Web3 from 'web3';
 
 
+
 const Header = () => {
 
   const [walletClick, setWalletClick] = useState(true);
@@ -51,6 +52,18 @@ const Header = () => {
         <IoSearch /> <input type="text" placeholder='Type here to search....' />
       </div>
       <div className='wall-con'>
+        <span className='signUpProfilebtn' > <h1 style={{
+          fontSize: '20px', fontWeight: 'light',
+          padding: '5px',
+          background: 'orange ',
+          height: '25px',
+          widows: '22px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: '100%'
+        }} >A</h1>
+        </span>
         <div className="wallet">
 
           <img src={svg} alt="SEEDx" />
@@ -68,7 +81,7 @@ const Header = () => {
         <button style={{ maxWidth: '140px', overflow: 'hidden' }} id='walletBtn' onClick={handleWalletClick}>{account ? account : 'Connect Wallet'}</button>
       </div>
       <div onClick={handleWalletClick} className={walletClick ? 'walletPopUp walletShowPopup' : 'walletPopUp'}>
-        {account ? <ProfilePage account={account} handleLogOutClick={handleLogOutClick} id={account ? 'hideProfile' : 'showProfile'} /> : <WalletComp connectWallet={connectWallet} />}
+        <ProfilePage account={account} handleLogOutClick={handleLogOutClick} id={account ? 'hideProfile' : 'showProfile'} /> : <WalletComp connectWallet={connectWallet} />
       </div>
     </header>
   )

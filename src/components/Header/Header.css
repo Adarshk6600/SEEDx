@@ -151,3 +151,21 @@ cursor:pointer;
 #hideProfile {
   display: none;
 }
+
+
+.signUpProfilebtn {
+  display: inline-block;
+  margin-top: 3px;
+  cursor: pointer;
+  
+}
+
+.signUpPopUp {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.475);
+}
+
+.displaySignUp {
+  display: none;
+}
