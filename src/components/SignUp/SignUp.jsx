@@ -7,7 +7,7 @@ import { IoMdArrowBack } from "react-icons/io";
 
 import './Login.css';
 
-const Login = () => {
+const SignUp = (handleClickProfileMenu) => {
   const [showpass, setShowPass] = useState(false);
   const [showSignUp, setShowSignU] = useState(false);
 
@@ -31,7 +31,7 @@ const Login = () => {
         <span style={{ background: 'green' }} onClick={handleSignUp} className="sign-in-button-unique">Sign in</span>
       </div>
       <div className='signUpHeader' >
-        <h2 className="login-title-unique">Log In</h2> <span ><IoMdArrowBack size={20} />
+        <h2 className="login-title-unique">Log In</h2> <span ><IoMdArrowBack onClick={handleClickProfileMenu} size={20} />
         </span>
       </div>
       <span className="google-signin-button-unique">
@@ -82,4 +82,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

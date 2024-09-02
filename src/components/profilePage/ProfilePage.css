@@ -60,6 +60,35 @@
 
 .overflowProfileAcc {
   overflow: hidden;
-  width: 100px;
+  max-width: 40%;
 
+}
+
+#signUpProfileBtn {
+  align-self: flex-end;
+  margin: 20px;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  justify-content: center;
+  background-color:green;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.showProfilePage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ShowSignUpProfile{
+  display: none;
 }

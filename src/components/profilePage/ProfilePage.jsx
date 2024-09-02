@@ -1,22 +1,32 @@
 import './ProfilePage.css'
-import { IoIosLogOut } from "react-icons/io";
+import { IoArrowBack } from "react-icons/io5";
 import { FaCopy } from "react-icons/fa";
 import { FaWallet } from "react-icons/fa";
 import { GrGallery } from "react-icons/gr";
+import { CgProfile } from "react-icons/cg";
+import SignUp from '../SignUp/SignUp'
 
 
 
 
 
-import React from 'react'
 
-const ProfilePage = ({ handleLogOutClick, account }) => {
+import React, { useState } from 'react'
+
+const ProfilePage = ({ account, handleWalletClick }) => {
+
+  const [ProfileMenu, setProfileMenu] = useState(false)
+
+  const handleClickProfileMenu = () => {
+    setProfileMenu(prev => !prev)
+  }
+
   return (
     <div className='profilePage'>
 
       <div className="signUpWindow">
-        
-       </div>
+
+      </div>
 
       <div className="profileHeader">
         <div>
@@ -25,7 +35,7 @@ const ProfilePage = ({ handleLogOutClick, account }) => {
           </p><FaCopy size={20} />
 
         </div>
-        <IoIosLogOut onClick={handleLogOutClick} size={25} />
+        <IoArrowBack onClick={handleWalletClick} size={25} />
       </div>
 
       <h1 className='Walletmoney'>$ 0</h1>
@@ -42,6 +52,12 @@ const ProfilePage = ({ handleLogOutClick, account }) => {
         </div>
       </div>
 
+      <div id='signUpProfileBtn' onClick={handleClickProfileMenu} >
+        <p>Sign In</p> <CgProfile size={20} />
+      </div>
+      <div className={ProfileMenu ? 'showProfilePage' : 'ShowSignUpProfile'}>
+        <SignUp handleClickProfileMenu={handleClickProfileMenu} />
+      </div>
     </div>
   )
 }

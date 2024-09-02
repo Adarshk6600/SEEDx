@@ -1,9 +1,9 @@
 import './WalletComp.css';
 
-const WalletComp = ({ clickFunction, connectWallet }) => {
+const WalletComp = ({ clickFunction, account, connectWallet }) => {
 
   return (
-    <div className='wallet_comp' onMouseLeave={clickFunction}>
+    <div className='wallet_comp' id={account? 'btnHideForWalletComp':''} onMouseLeave={clickFunction}>
       <h3 onClick={clickFunction}>Connect a Wallet</h3>
       <div className='wallet_wrapper'>
         <h5>Recommended</h5>

@@ -15,6 +15,7 @@ const Header = () => {
   const [inrpopup, setInrpopup] = useState(true)
   const [account, setAccount] = useState(null);
 
+
   const handleInr = () => {
     setInrpopup(prev => !prev)
   }
@@ -40,10 +41,6 @@ const Header = () => {
     }
   };
 
-
-  const handleLogOutClick = () => {
-    setAccount(null)
-  }
 
 
   return (
@@ -80,8 +77,10 @@ const Header = () => {
         </div>
         <button style={{ maxWidth: '140px', overflow: 'hidden' }} id='walletBtn' onClick={handleWalletClick}>{account ? account : 'Connect Wallet'}</button>
       </div>
-      <div onClick={handleWalletClick} className={walletClick ? 'walletPopUp walletShowPopup' : 'walletPopUp'}>
-        <ProfilePage account={account} handleLogOutClick={handleLogOutClick} id={account ? 'hideProfile' : 'showProfile'} /> : <WalletComp connectWallet={connectWallet} />
+      <div className={walletClick ? 'walletPopUp walletShowPopup' : 'walletPopUp'}>
+        <ProfilePage account={account} handleWalletClick={handleWalletClick} /><WalletComp
+          account={account}
+          connectWallet={connectWallet} />
       </div>
     </header>
   )
