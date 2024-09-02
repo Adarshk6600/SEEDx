@@ -7,7 +7,7 @@ import { IoMdArrowBack } from "react-icons/io";
 
 import './Login.css';
 
-const SignUp = (handleClickProfileMenu) => {
+const SignUp = ({ handleClickProfileMenu }) => {
   const [showpass, setShowPass] = useState(false);
   const [showSignUp, setShowSignU] = useState(false);
 
