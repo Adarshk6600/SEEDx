@@ -27,14 +27,12 @@ const Home = () => {
 
   return (
     <>
-      {/* Dynamic Trending Links Section */}
       <div className='homelinks'>
         <span>
           <AiFillThunderbolt style={{ color: 'gold' }} size={15} /> <p>Trending</p>
         </span>
         <div className="links">
           {links.map((item, index) => {
-            // Correctly format the name to the first 3 letters + '/INRx'
             const formattedName = `${item.name.substring(0, 3).toUpperCase()}/INRx`;
             return (
               <li key={item.id}>
@@ -45,12 +43,11 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Other Components */}
+
       <Hero />
       <Cards h1='Gamepad' />
       <Markets activeCoin={activeCoin} />
 
-      {/* Dynamically Rendered Content using Reusable Cards Component */}
       <Cards
         h1='Get more done with SEEDx'
         heading='Launching a Token should be a celebration, not a nightmare.'
@@ -60,7 +57,6 @@ const Home = () => {
         para="We don't charge anything to list on an exchange, do airdrops, or make tokens."
       />
 
-      {/* Dynamic Footer Button Section */}
       <div className="footerbutton">
         <h1>Get Started with Governance</h1>
         <p>Start, grow, and manage SEEDx DAO. We're with you each step of the way.</p>

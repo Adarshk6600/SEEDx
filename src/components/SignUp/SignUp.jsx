@@ -1,13 +1,48 @@
 import React, { useState } from 'react';
-import { FaGoogle, FaEyeSlash, FaApple, FaAndroid } from 'react-icons/fa';
+import { FaEyeSlash } from 'react-icons/fa';
 import { IoEyeSharp } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import { IoMdArrowBack } from "react-icons/io";
-
-
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = ({ handleClickProfileMenu }) => {
+
+  const navigate = useNavigate()
+
+  const [userSignUp, setUserSignUp] = useState({
+    username: '',
+    email: '',
+    password: '',
+    jobTitle: ''
+  })
+
+  const handleInputValue = (e) => {
+    let name = e.target.name;
+    let value = e.target.value
+
+    setUserSignUp({
+      ...userSignUp, [name]: value
+
+
+    })
+  }
+
+  const [userSignIn, setUserSignIn] = useState({
+    email: '',
+    password: ''
+  })
+
+  const handleSignInInputVal = (e) => {
+    let name = e.target.name
+    let value = e.target.value
+
+    setUserSignIn({
+      ...userSignIn, [name]: value
+    })
+  }
+
+
   const [showpass, setShowPass] = useState(false);
   const [showSignUp, setShowSignU] = useState(false);
 
@@ -20,14 +55,50 @@ const SignUp = ({ handleClickProfileMenu }) => {
     setShowPass(prev => !prev);
   };
 
+  const handleSignUpSubmit = async (e) => {
+    e.preventDefault();
+    console.log(userSignUp);
+    const response = await fetch('http://localhost:8080/user', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userSignUp)
+    })
+
+    if (userSignUp) {
+      setShowSignU(false)
+    }
+  }
+
+  const handleSignInSubmit = async (e) => {
+    e.preventDefault();
+    console.log(userSignIn);
+    const response = await fetch('http://localhost:8080/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userSignIn)
+    })
+
+    if (userSignIn) {
+      console.log('sign in success');
+    }
+  }
+
+
   return (
     <div className="login-container-unique">
       <div className={showSignUp ? 'sign-up-box-unique' : 'show-sign-up-unique'}>
         <h1 className="sign-up-title-unique">Sign Up</h1>
-        <input type="text" className='input-box-unique' name="" placeholder='Enter Your Username.' id="" />
-        <input type="text" className='input-box-unique' name="" placeholder='Enter Your Email.' id="" />
-        <input type="text" className='input-box-unique' name="" placeholder='Enter Your Password.' id="" />
-        <span className="submit-button-unique">Submit</span>
+        <form onSubmit={handleSignUpSubmit}>
+          <input onChange={handleInputValue} value={userSignUp.username} type="text" className='input-box-unique' name="username" placeholder='Enter Your Username.' id="username" />
+          <input onChange={handleInputValue} value={userSignUp.email} type="email" className='input-box-unique' name="email" placeholder='Enter Your Email.' id="email" />
+          <input onChange={handleInputValue} value={userSignUp.password} type="text" className='input-box-unique' name="password" placeholder='Enter Your Password.' id="password" />
+          <input onChange={handleInputValue} value={userSignUp.jobTitle} type="text" className='input-box-unique' name="jobTitle" placeholder='Job details : optional' id='jobTitle' />
+          <button type='submit' className="submit-button-unique">Submit</button>
+        </form>
         <span style={{ background: 'green' }} onClick={handleSignUp} className="sign-in-button-unique">Sign in</span>
       </div>
       <div className='signUpHeader' >
@@ -44,31 +115,37 @@ const SignUp = ({ handleClickProfileMenu }) => {
       <div className="divider-unique">
         <span className="or-text-unique">OR</span>
       </div>
-      <form className="login-form-unique">
+      <form onSubmit={handleSignInSubmit} className="login-form-unique">
         <div className="input-group-unique">
           <label className="label-unique">Email</label>
           <input
+            onChange={handleSignInInputVal}
+            value={userSignIn.email}
             type="email"
-            placeholder="eg: youremail@gmail.com"
+            placeholder="Enter Your Email"
             className="input-unique"
+            name='email'
           />
         </div>
         <div className="input-group-unique">
           <label className="label-unique">Password</label>
           <div className="password-wrapper-unique">
             <input
-              type="password"
-              placeholder="eg: yourpassword@123"
+              onChange={handleSignInInputVal}
+              value={userSignIn.password}
+              type={showpass ? "text" : "password"}
+              placeholder="Enter Your Password"
               className="input-unique"
+              name='password'
             />
             <span onClick={handleShowPass} className="password-toggle-unique">
-              {showpass ? <FaEyeSlash size={20} /> : <IoEyeSharp size={20} />}
+              {showpass ? <IoEyeSharp size={20} /> : <FaEyeSlash size={20} />}
             </span>
           </div>
         </div>
-        <span type="submit" className="login-submit-button-unique">
+        <button type="submit" className="login-submit-button-unique">
           Log In
-        </span>
+        </button>
       </form>
       <div className="footer-unique">
         <a href="#" className="forgot-password-link-unique">

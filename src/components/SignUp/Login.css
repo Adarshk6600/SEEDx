@@ -1,25 +1,37 @@
-/* Login.css */
-
+/* Container for the login/signup form */
 .login-container-unique {
   position: relative;
   width: 450px;
   margin: 100px auto;
   padding: 20px;
   background-color: black;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0px 0px 10px var(--border-color);
   font-family: Arial, sans-serif;
 }
 
-.login-title-unique {
+/* Header section */
+.signUpHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
-  color: #333;
+}
+
+.signUpHeader span {
+  cursor: pointer;
+}
+
+/* Title for signup */
+.sign-up-title-unique {
+  color: white;
+  margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
 }
 
+/* Google sign-in button */
 .google-signin-button-unique {
   width: 100%;
   padding: 12px;
@@ -40,6 +52,7 @@
   font-size: 18px;
 }
 
+/* Divider line */
 .divider-unique {
   margin: 20px 0;
   position: relative;
@@ -58,34 +71,29 @@
   font-size: 14px;
 }
 
-.login-form-unique {
-  text-align: left;
+/* Forms and input styles */
+form {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
 }
 
-.input-group-unique {
-  margin-bottom: 20px;
-}
-
-.label-unique {
-  display: block;
-  margin-bottom: 5px;
-  color: white;
-  font-size: 14px;
-}
-
+.input-box-unique,
 .input-unique {
   width: 100%;
-  padding: 18px;
+  padding: 15px;
   border: none;
   background-color: #333;
   color: white;
   font-size: 14px;
+  margin-bottom: 15px;
 }
 
 .input-unique::placeholder {
   color: rgba(128, 128, 128, 0.564);
 }
 
+/* Password field wrapper */
 .password-wrapper-unique {
   position: relative;
 }
@@ -99,17 +107,37 @@
   color: #888;
 }
 
-.login-submit-button-unique {
+/* Buttons */
+.submit-button-unique{
   width: 100%;
-  padding: 12px;
-  background-color: #1E90FF;
-  color: #fff;
+  padding: 15px;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  z-index: 110;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
 }
 
+.submit-button-unique {
+  background-color: #1E90FF;
+}
+
+.sign-in-button-unique {
+  background-color: green;
+  padding: 15px;
+  margin-top: -15px;
+  cursor: pointer;
+}
+
+.login-submit-button-unique {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Footer */
 .footer-unique {
   margin-top: 20px;
 }
@@ -131,6 +159,7 @@
   text-decoration: none;
 }
 
+/* Sign-up box */
 .sign-up-box-unique {
   background-color: black;
   display: flex;
@@ -142,58 +171,33 @@
   width: 100%;
   margin: -20px;
   z-index: 2;
-  box-shadow: 0px 0px 10px var(--border-color);
-}
-
-.sign-up-title-unique {
-  color: white;
-}
-
-.input-box-unique {
-  background-color: #333;
-  padding: 15px 20px;
-  color: white;
-}
-
-.submit-button-unique {
-  background-color: #1E90FF;
-  padding: 15px;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.sign-in-button-unique {
-  background-color: green;
-  padding: 15px;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .show-sign-up-unique {
   display: none;
+  height: auto;
 }
 
+
 .login-submit-button-unique {
-  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #007BFF;
+  /* Blue color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
 
-.signUpHeader {
+.input-group-unique {
   display: flex;
-  justify-content: space-between;
-}
-
-.signUpHeader span {
-  cursor: pointer;
+  flex-direction: column;
+  text-align: left;
+  gap: 5px;
 }
