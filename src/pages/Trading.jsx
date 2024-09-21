@@ -9,7 +9,6 @@ import InputRange from '../components/Input Range/InputRange';
 import TabNavigation from '../components/TabNav/TabNavigation';
 import Heading from '../components/TableHistory/Heading';
 import Table from '../components/TableHistory/Table';
-import WalletComp from '../components/WalletComp/WalletComp';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -25,29 +24,31 @@ const Trading = () => {
   const { authToken } = useSelector((state) => state.user)
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:5173/Trading', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${authToken}`
-          },
-        });
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/Trading', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        },
+      });
 
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    };
+
+      const result = await response.json();
+      console.log(result, "result")
+      // setData(result);
+    } catch (error) {
+      // setError(error.message);
+    } finally {
+      // setLoading(false);
+    }
+  };
+  useEffect(() => {
 
     fetchData();
   }, []);
