@@ -7,10 +7,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setActiveCoin, setCoinsList } from '../../app/Store/reducers/coinReducer';
 
 const PopUp = ({ setpopup }) => {
-  const { coins } = useSelector(state => state.coins);
+  const coins = useSelector(state => state.coin.coins); // Adjust based on your state structure
   const dispatch = useDispatch();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchData = useCallback(async () => {
     try {
@@ -36,19 +37,28 @@ const PopUp = ({ setpopup }) => {
 
   const handleRowClick = (coin) => {
     dispatch(setActiveCoin(coin));
-    setpopup(true)
+    setpopup(false); // Changed to false to close the popup on selecting a coin
   };
+
+  const filteredCoins = coins.filter(coin =>
+    coin.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className='popup'>
       <div className="popup_heading">
         <h2>Select a Token</h2>
-        <span onClick={setpopup}><h3>X</h3></span>
+        <span onClick={() => setpopup(false)}><h3>X</h3></span> {/* Ensure to close popup */}
       </div>
       <div className="popup_input">
         <div className='inputpop'>
           <IoSearch size={20} style={{ color: 'gray' }} />
-          <input type="text" placeholder='Search By Coin Name...' />
+          <input
+            type="text"
+            placeholder='Search By Coin Name...'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
       </div>
       <div className="popuplist">
@@ -84,10 +94,10 @@ const PopUp = ({ setpopup }) => {
               </tr>
             </thead>
             <tbody>
-              {coins.map((item) => (
+              {filteredCoins.map((item) => (
                 <tr key={item.id} onClick={() => handleRowClick(item)} style={{ cursor: 'pointer' }}>
                   <Table
-                    onClick={setpopup}
+                    onClick={() => handleRowClick(item)} // Adjust based on usage
                     className='tdfont'
                     image={item.image}
                     data={item.name}

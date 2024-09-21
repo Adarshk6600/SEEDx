@@ -5,6 +5,8 @@ import { RiSwapBoxLine, RiGovernmentLine } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 import { SiStockx } from "react-icons/si";
 import { Link } from 'react-router-dom';
+import { CgProfile } from "react-icons/cg";
+
 
 
 
@@ -41,6 +43,14 @@ const Sidebar = () => {
       title2: 'Delegators',
       icon: <RiGovernmentLine size={28} />
     },
+
+    {
+      heading: 'Profile',
+      title: 'User',
+      icon: <CgProfile size={28} />,
+      link: '/UserProfilePage'
+
+    }
   ];
 
   return (

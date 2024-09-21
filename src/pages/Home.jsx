@@ -23,7 +23,10 @@ const Home = () => {
   ];
 
   // Use Redux selector to get the current active coin
-  const { activeCoin } = useSelector((state) => state.coins);
+  const activeCoin = useSelector((state) => state.coins?.activeCoin || 'DefaultCoin');
+  const { authToken } = useSelector((state) => state.user)
+  console.log(authToken);
+
 
   return (
     <>
@@ -42,7 +45,6 @@ const Home = () => {
           })}
         </div>
       </div>
-
 
       <Hero />
       <Cards h1='Gamepad' />

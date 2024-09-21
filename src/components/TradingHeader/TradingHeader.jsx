@@ -1,5 +1,5 @@
 import './TradingHeader.css';
-import svg from '../../assets/seedx.svg';
+import svg from '../../assets/seedx.svg'; // Ensure this path is correct
 import PopUp from '../PopUp/PopUp';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -11,8 +11,10 @@ const TradingHeader = () => {
     setPopup(prev => !prev);
   };
 
-  const { activeCoin } = useSelector(state => state.coins);
+  // Ensure you are accessing the correct state property
+  const activeCoin = useSelector(state => state.coin.activeCoin);
 
+  // Define trading data with default values
   const tradingData = [
     { heading: '24H Change', data: activeCoin?.price_change_24h ?? 'N/A' },
     { heading: '24H High', data: activeCoin?.high_24h ?? 'N/A' },

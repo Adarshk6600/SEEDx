@@ -12,13 +12,11 @@ header {
   justify-content: space-between;
   top: 0;
   z-index: 99;
-  
 }
 
 header .searchBox {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   color: gray;
   padding: 10px 15px;
@@ -27,18 +25,17 @@ header .searchBox {
 }
 
 header .searchBox input {
-   background-color: transparent;
-   outline: none;
-   border: none;
-   color: white;
-
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
 }
 
 .wallet {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px; font-size: 12px;
+  gap: 10px;
+  font-size: 12px;
   color: rgb(195, 195, 195);
   padding: 10px;
   border-right: 1px solid var(--border-color);
@@ -49,13 +46,13 @@ header .searchBox input {
   height: 20px;
 }
 
-
-.wallet .price{
+.wallet .price {
   font-size: 14px;
   font-weight: bold;
   color: white;
   cursor: pointer;
 }
+
 .wallet .price:hover {
   color: rgb(14, 144, 14);
 }
@@ -81,49 +78,51 @@ header .searchBox input {
   border: none;
   border-radius: 5px;
   background: rgb(66, 60, 227);
-    background: linear-gradient(137deg, rgb(87, 81, 243) 28%, rgba(86, 81, 243, 1) 39%, rgba(116, 112, 236, 1) 58%, rgb(241, 89, 246) 100%);
-    cursor: pointer;
+  background: linear-gradient(137deg, rgb(87, 81, 243) 28%, rgba(86, 81, 243, 1) 39%, rgba(116, 112, 236, 1) 58%, rgb(241, 89, 246) 100%);
+  cursor: pointer;
 }
 
 .wall-con button:hover {
   background: rgb(176, 174, 222);
-    background: linear-gradient(137deg, rgba(176, 174, 222, 1) 0%, rgba(234, 88, 241, 0.7874331861650911) 1%);
+  background: linear-gradient(137deg, rgba(176, 174, 222, 1) 0%, rgba(234, 88, 241, 0.7874331861650911) 1%);
 }
 
 .inrpopup {
   position: absolute;
-  background-color:var(--bg-color);
+  background-color: var(--bg-color);
   height: auto;
   width: 150px;
   border-radius: 10px;
-  bottom: -70PX;
-  padding: 20px 0px;  
+  bottom: -70px;
+  padding: 20px 0;
+  display: none;
+  /* Hide by default */
+}
+
+.inrpopup.showInr {
+  display: block;
+  /* Show when class is added */
+}
+
+.inrpopup div {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 10px;
+  cursor: pointer;
 }
 
 .inrpopup div span {
-color: gray;
-padding: 4px 10px;
-cursor:pointer;
+  color: gray;
 }
 
 .inrpopup div span:last-child {
   color: rgb(0, 197, 0);
   font-size: 16px;
-  margin-left: 5px;
   font-weight: lighter;
-}
-
-.showInr {
-  display: none;
 }
 
 #buttonInr {
   cursor: pointer;
-  
-}
-
-.inrpopup div:hover {
-  background-color: rgba(75, 75, 75, 0.532);
 }
 
 .walletPopUp {
@@ -137,11 +136,13 @@ cursor:pointer;
   justify-content: center;
   align-items: center;
   padding-right: 200px;
-
+  display: none;
+  /* Hide by default */
 }
 
 .walletShowPopup {
-  display: none;
+  display: flex;
+  /* Show when class is added */
 }
 
 #showProfile {
@@ -152,12 +153,10 @@ cursor:pointer;
   display: none;
 }
 
-
 .signUpProfilebtn {
   display: inline-block;
   margin-top: 3px;
   cursor: pointer;
-  
 }
 
 .signUpPopUp {

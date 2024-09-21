@@ -1,4 +1,3 @@
-// src/app/reducers/coinReducer.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

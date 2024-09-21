@@ -92,3 +92,7 @@
 .ShowSignUpProfile{
   display: none;
 }
+
+#btnShowArrowBack {
+  z-index: 199;
+}

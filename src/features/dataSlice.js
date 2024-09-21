@@ -12,11 +12,10 @@ const dataSlice = createSlice({
   name: 'data',
   initialState: {
     data: [],
-    status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+    status: 'idle',
     error: null,
   },
   reducers: {
-    // Add your reducers here if needed
   },
   extraReducers: (builder) => {
     builder

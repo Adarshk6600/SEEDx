@@ -1,0 +1,143 @@
+/* UserProfilePage.css */
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  padding-left: 50px;
+  /* Keep your provided padding */
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  max-width: 600px;
+  margin: 120px 0 20px;
+  /* Keep your provided margin */
+  text-align: left;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0e0;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  /* Softer pink neon effect */
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  /* Column layout for profile info */
+  align-items: center;
+  /* Center align the items horizontally */
+  width: 100%;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(102, 204, 255, 0.2));
+  /* Gradient background */
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  /* Align text to the left */
+  justify-content: flex-start;
+  text-align: left;
+  gap: 100px;
+}
+
+.info-item:hover {
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.5);
+  /* Enhance shadow on hover */
+}
+
+.info-title {
+  font-size: 1.2em;
+  color: #f900f1;
+  /* Softer pink neon */
+  text-shadow: 0 0 8px #ff66b2;
+  /* Softer glow */
+  margin-right: 15px;
+  min-width: 120px;
+  /* Ensure titles are aligned to the left */
+  text-align: left;
+  margin-left: 80px;
+}
+
+.info-value {
+  font-size: 1.2em;
+  color: #66ccff;
+  /* Soft blue for text */
+  margin: 0;
+  padding: 5px;
+  /* Subtle shadow effect */
+  transition: all 0.3s ease;
+  /* Ensure values are aligned to the left */
+  text-align: left;
+}
+
+/* Logout button styling */
+.logout-button {
+  display: inline-block;
+  background-color: #ff3f3f;
+  /* Neon red background */
+  color: #fff;
+  /* White text */
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+  /* Neon red glow effect */
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.logout-button:hover {
+  background-color: #d80000;
+  /* Darker red on hover */
+  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  /* Stronger neon glow on hover */
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    width: 90%;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align items to the start (left) */
+  }
+
+  .info-title {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}

@@ -5,16 +5,17 @@ import { FaWallet } from "react-icons/fa";
 import { GrGallery } from "react-icons/gr";
 import { CgProfile } from "react-icons/cg";
 import SignUp from '../SignUp/SignUp'
-
-
-
-
-
-
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 
 const ProfilePage = ({ account, handleWalletClick }) => {
-
+  const {
+    username,
+    age,
+    jobTitle,
+    email,
+    isAuthenticated,
+  } = useSelector(state => state.user);
   const [ProfileMenu, setProfileMenu] = useState(false)
 
   const handleClickProfileMenu = () => {
@@ -35,7 +36,7 @@ const ProfilePage = ({ account, handleWalletClick }) => {
           </p><FaCopy size={20} />
 
         </div>
-        <IoArrowBack onClick={handleWalletClick} size={25} />
+        <IoArrowBack id='btnShowArrowBack' onClick={handleWalletClick} size={25} />
       </div>
 
       <h1 className='Walletmoney'>$ 0</h1>
@@ -52,11 +53,11 @@ const ProfilePage = ({ account, handleWalletClick }) => {
         </div>
       </div>
 
-      <div id='signUpProfileBtn' onClick={handleClickProfileMenu} >
+      {!isAuthenticated && <div id='signUpProfileBtn' onClick={handleClickProfileMenu} >
         <p>Sign In</p> <CgProfile size={20} />
-      </div>
+      </div>}
       <div className={ProfileMenu ? 'showProfilePage' : 'ShowSignUpProfile'}>
-        <SignUp handleClickProfileMenu={handleClickProfileMenu} />
+        <SignUp isAuthenticated={isAuthenticated}  handleClickProfileMenu={handleClickProfileMenu} setProfileMenu={setProfileMenu} />
       </div>
     </div>
   )

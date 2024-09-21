@@ -10,7 +10,8 @@ import TabNavigation from '../components/TabNav/TabNavigation';
 import Heading from '../components/TableHistory/Heading';
 import Table from '../components/TableHistory/Table';
 import WalletComp from '../components/WalletComp/WalletComp';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Trading = () => {
   // State to keep track of which button is active
@@ -20,6 +21,36 @@ const Trading = () => {
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
   };
+
+  const { authToken } = useSelector((state) => state.user)
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5173/Trading', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
