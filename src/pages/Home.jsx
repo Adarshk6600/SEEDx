@@ -5,9 +5,49 @@ import Hero from '../components/Hero/Hero';
 import Cards from '../components/Cards/Cards';
 import Markets from '../components/Markets/Markets';
 import Footer from '../components/Footer/Footer';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logOut } from '../app/Store/reducers/userSlice';
+import { useEffect } from 'react';
+
 
 const Home = () => {
+
+
+
+  const dispatch = useDispatch()
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/home', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        },
+      });
+
+      if (!response.ok) {
+        if (response.status === 403) {
+          dispatch(logOut());
+
+        }
+      }
+
+      const result = await response.json();
+      console.log(result, "result")
+      // setData(result);
+    } catch (error) {
+      // setError(error.message);
+    } finally {
+      // setLoading(false);
+    }
+  };
+  useEffect(() => {
+
+    fetchData();
+  }, []);
+
+
   // Trending coin data
   const links = [
     { id: 1, name: 'SHIB' },

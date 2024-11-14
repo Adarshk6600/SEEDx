@@ -10,11 +10,15 @@ import TabNavigation from '../components/TabNav/TabNavigation';
 import Heading from '../components/TableHistory/Heading';
 import Table from '../components/TableHistory/Table';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logOut } from '../app/Store/reducers/userSlice'
 
 const Trading = () => {
+
+  const dispatch = useDispatch()
   // State to keep track of which button is active
   const [activeButton, setActiveButton] = useState(null);
+
 
   // Function to handle button clicks and set the active button
   const handleButtonClick = (buttonName) => {
@@ -36,7 +40,10 @@ const Trading = () => {
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        if (response.status === 403) {
+          dispatch(logOut());
+
+        }
       }
 
       const result = await response.json();

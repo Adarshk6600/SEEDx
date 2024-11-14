@@ -16,8 +16,6 @@ const SignUp = ({ handleClickProfileMenu, isAuthenticated }) => {
     password: '',
     jobTitle: ''
   });
-
-
   const [userSignIn, setUserSignIn] = useState({
     email: '',
     password: ''
